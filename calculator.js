@@ -8,15 +8,15 @@ var mathOperations = function (num1, num2, operation){
 
 		switch(operation){
 
-			case '+':
+			case 'add':
 			return (parseInt(num1) + parseInt(num2));
 			break;
 
-			case '-':
+			case 'sub':
 			return (parseInt(num1) - parseInt(num2));
 			break;
 
-			case '*':
+			case 'mul':
 			return (parseInt(num1) * parseInt(num2));
 			break;
 
@@ -30,7 +30,11 @@ var mathOperations = function (num1, num2, operation){
 
 
 			case 'sqrt':
-				return (Math.pow(parseInt(num1), 1 / parseInt(num2)));
+
+				if(parseInt(num1) < 0 )
+					return "Please enter a positive number";
+				else
+					return (Math.pow(parseInt(num1), 1 / parseInt(num2)));
 				break;
 
 
@@ -41,7 +45,7 @@ var mathOperations = function (num1, num2, operation){
 
 
 
-			case '^':
+			case 'pow':
 				return parseInt(Math.pow(num1, num2));
 				break;
 
